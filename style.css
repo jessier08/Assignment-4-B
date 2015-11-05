@@ -31,7 +31,7 @@ html,body{
 .canvas .custom-tooltip{
     position:absolute;
 /*    border:1px solid;*/
-    width:150px;
+    width:120px;
     min-height:10px;
     padding:0px 10px;
 }
@@ -45,8 +45,8 @@ body{
 	font-size: 16px;
 }
 h1{ font-size:2em;}
-h2{ font-size:1.1em;}
-p{ font-size: .9em;}
+h2{ font-size:.8em;}
+p{ font-size: .6em;}
 
 /*------------svg--------------*/
 .axis .domain{
@@ -58,7 +58,8 @@ p{ font-size: .9em;}
     stroke-width:1px;
 }
 .axis .tick text{
-    fill:rgb(80,80,80)
+    fill:rgb(80,80,80);
+    font-size:.8em;
 }
 
 .data-point{
@@ -66,18 +67,19 @@ p{ font-size: .9em;}
     stroke-width:2px;
     stroke:rgb(150,150,150);
 }
-    .coffee-data-point{ stroke:red; }
-    .tea-data-point{ stroke:rgb(0,200,255); }
+.coffee-data-point{stroke:red; }
+.tea-data-point{stroke:rgb(0,200,255); }
+
 .data-line{
     fill:none;
     stroke-width:2px;
-    stroke:rgb(150,150,150);
-}
-    .coffee-data-line{ stroke:red; }
-    .tea-data-line{ stroke:rgb(0,200,255); }
+    stroke:rgba(150,150,150,.2);}
+.coffee-data-line{ stroke:red; opacity: .2; }
+.tea-data-line{ stroke:rgba(0,200,255,.2); }
+
 .data-area{
     fill-opacity:.05;
     fill:rgb(150,150,150);
 }
-    .coffee-data-area{ fill:red; }
-    .tea-data-area{ fill:rgb(0,200,255); }
+.coffee-data-area{ fill:red; }
+.tea-data-area{ fill:rgb(0,200,255); }

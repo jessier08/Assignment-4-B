@@ -58,7 +58,7 @@ function dataLoaded(error, data, metadata){
         .attr('class', 'tea-data-line data-line')
         .attr('d', lineGenerator)
 
-    plot.selectAll('t')
+    plot.selectAll('d')
         .data(nestedData[0].values)
         .enter()
         .append('circle')
@@ -74,7 +74,7 @@ function dataLoaded(error, data, metadata){
         .attr('class', 'coffee-data-line data-line')
         .attr('d', lineGenerator)   
 
-    plot.selectAll('t')
+    plot.selectAll('d')
         .data(nestedData[1].values)
         .enter()
         .append('circle')
