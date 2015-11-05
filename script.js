@@ -43,7 +43,7 @@ var lineGenerator = d3.svg.line()
 //Start importing data
 queue()
     .defer(d3.csv,'data/fao_combined_world_1963_2013.csv', parse)
-    .defer(d3.csv,'data/metadata.csv', parseMetadata)
+    // .defer(d3.csv,'data/metadata.csv', parseMetadata)
     .await(dataLoaded)
 
 function dataLoaded(error, data, metadata){
@@ -122,8 +122,8 @@ function parse(d){
     };
 };
 
-function parseMetadata(d){
-}
+// function parseMetadata(d){
+// }
 
 
 
