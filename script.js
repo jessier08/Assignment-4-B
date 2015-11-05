@@ -51,26 +51,45 @@ function dataLoaded(error, data, metadata){
     var nestedData = d3.nest()
         .key(function(d){return d.item;})
         .entries(data)
-
+    
+    //tea
     plot.append('path')
         .datum(nestedData[0].values)
         .attr('class', 'tea-data-line data-line')
         .attr('d', lineGenerator)
-        .call(attachTooltip)
 
+    plot.selectAll('t')
+        .data(nestedData[0].values)
+        .enter()
+        .append('circle')
+        .attr('class','tea-data-point data-point')
+        .attr('r',3)
+        .attr('cx', function(d){return scaleX(d.year);})
+        .attr('cy', function(d){return scaleY(d.value);})
+        .call(attachTooltip)  
 
+    //coffee
     plot.append('path')
         .datum(nestedData[1].values)
         .attr('class', 'coffee-data-line data-line')
-        .attr('d', lineGenerator) 
+        .attr('d', lineGenerator)   
+
+    plot.selectAll('t')
+        .data(nestedData[1].values)
+        .enter()
+        .append('circle')
+        .attr('class','coffee-data-point data-point')
+        .attr('r',3)
+        .attr('cx', function(d){return scaleX(d.year);})
+        .attr('cy', function(d){return scaleY(d.value);})
         .call(attachTooltip)
-        
 }
 
 function attachTooltip(selection){
     selection
         .on('mouseenter',function(d){
             var tooltip = d3.select('.custom-tooltip');
+            
             tooltip
                 .transition()
                 .style('opacity',1);
@@ -81,14 +100,12 @@ function attachTooltip(selection){
         })
         .on('mousemove',function(){
             var xy = d3.mouse(canvas.node());
-            console.log(xy);
-
+            
             var tooltip = d3.select('.custom-tooltip');
-
+            
             tooltip
                 .style('left',xy[0]+20+'px')
                 .style('top',(xy[1]+20)+'px');
-
         })
         .on('mouseleave',function(){
             var tooltip = d3.select('.custom-tooltip')

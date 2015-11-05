@@ -30,10 +30,14 @@ html,body{
 /*-----------tooltip-----------*/
 .canvas .custom-tooltip{
     position:absolute;
-    border:1px solid red;
+/*    border:1px solid;*/
     width:150px;
     min-height:10px;
     padding:0px 10px;
+}
+
+.custom-tooltip{
+    background-color: rgba(255,255,255,.8)
 }
 
 /*------------font-------------*/
